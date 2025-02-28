@@ -1,9 +1,8 @@
-import express from 'express';
-import {Login, GrammarCheck} from '../controllers/Controller.js'; 
+import express from "express";
+import { login, grammarCheck } from "../controllers/Controller.js";
 const router = express.Router();
 
+router.post("/login", login);
+router.post("/grammar-check", grammarCheck);
 
-router.post('/login', Login);
-router.post('/grammar-check', GrammarCheck);
-
-export default router;  
+export default router;
