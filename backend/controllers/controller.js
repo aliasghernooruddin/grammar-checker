@@ -5,6 +5,10 @@ import axios from "axios";
 
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
+const healthcheck = (req, res) => {
+  return res.status(200).json({ message: "server is running successfully" });
+};
+
 const login = (req, res) => {
   const data = req.body;
   if (!data.username || !data.password) {
@@ -54,4 +58,4 @@ const grammarCheck = async (req, res) => {
   res.json({ incorrectWords: JSON.parse(incorrectWords) });
 };
 
-export { login, grammarCheck };
+export { login, grammarCheck, healthcheck };
